@@ -2,7 +2,7 @@ FROM openjdk:11 as base
 WORKDIR /
 COPY . .
 RUN apt update
-RUM apt install -y maven
+RUN apt install -y maven
 RUN mvn -N io.takari:maven:wrapper
 RUN chmod u+x mvnw
 RUN ./mvnw clean package
