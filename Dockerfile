@@ -9,5 +9,6 @@ RUN ./mvnw clean package
 
 FROM tomcat:9
 WORKDIR webapps
+EXPOSE 8080
 RUN rm -rf myapp
 COPY --from=base /target/myapp.war .
