@@ -1,8 +1,9 @@
 FROM openjdk:11 as base
-ENV APP_HOME /myapp
-WORKDIR $APP_HOME
-COPY . $APP_HOME
-RUN cd $APP_HOME
+WORKDIR /
+COPY . .
+RUN apt update
+RUM apt install -y maven
+RUN mvn -N io.takari:maven:wrapper
 RUN chmod u+x mvnw
 RUN ./mvnw clean package
 
