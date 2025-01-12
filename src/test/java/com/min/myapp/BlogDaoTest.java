@@ -12,7 +12,7 @@ import com.min.myapp.dao.IBlogDao;
 import com.min.myapp.dao.IUserDao;
 import com.min.myapp.dto.BlogDto;
 
-@SpringJUnitConfig(locations={"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"})
+@SpringJUnitConfig(locations={"file:src/main/webapp/WEB-INF/spring/root-context.xml", "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"})
 class BlogDaoTest {
 
   @Autowired
