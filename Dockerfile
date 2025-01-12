@@ -9,5 +9,7 @@ RUN ./mvnw clean package
 
 FROM tomcat:9
 WORKDIR webapps
-RUN rm -rf myapp
+RUN ../bin/shutdown.sh
 COPY --from=base /target/myapp.war .
+RUN rm -rf myapp
+RUN ../bin/startup.sh
